@@ -13,8 +13,8 @@ Finance application is a webpage project which contains all of your daily financ
 ## General Info
 The aim of the financial application is to 
 - see all of your obligations, 
-- order all of your obligations in the way that is the bset for you
-- use the application on a daily, monthly or yeatle basis
+- order all of your obligations in the way that is best for you
+- use the application on a daily, monthly or yearly basis
 The end result is to have all of your financial obligations in one place.
 ## Screenshots
 ![finance_img](./finance_img.png)
