@@ -5,18 +5,19 @@ body, html {
     margin: 0;
     font-family: 'Calibri', sans-serif;
     font-weight: 100;
+
 }
 
 header {
     background-color: #404a4d;
     width: 100%;
-    height: 7%;
+    /* height: 7%; */
+    height: 65px;
     display: table;
+    
 }
 
         nav ul .fa {
-            /* padding-left: 18px;
-            padding-right: 18px; */
             width: 40px;
             margin-left: 6px;
             margin-right: 6px;
@@ -46,9 +47,17 @@ header {
 
 nav {
     background-color: #546064;
-    float: left;
-    width: 18%;
-    height: 88%;
+    /* float: left; */
+    /* width: 18%; */
+    width: 250px;
+    /* height: 90%; */
+    top: 65px;
+    /* top: 7%; */
+    bottom: 38px;
+    overflow: scroll;
+    overflow-x: auto;
+    position: absolute;
+    transition: 0.5s;
 }
 
         ul {
@@ -63,7 +72,19 @@ nav {
         li {
             padding-top: 10px;
             padding-bottom: 10px;
+            float: left;
+            width: 230px;
         }
+
+        li:hover {
+            background-color: #404a4d;
+            
+        }
+
+            li#text {
+                left: 100px;
+                color: rgb(40, 192, 243);
+            }
 
         a {
             color: white;
@@ -71,15 +92,22 @@ nav {
             text-decoration: none;
         }
 
-        li:hover {
-            background-color: rgb(40, 192, 243);
+        a:hover {
+            color: rgb(40, 192, 243);
+            background-color: white;
+            transition: 0.2s;
         }
+
 
 section {
     background-color: #e2e2e2;
     float: left;
-    width: 82%;
+    /* width: 82%; */
     height: 88%;
+    left: 250px;
+    right: 0;
+    position: absolute;
+    transition: left .5s;
 }
 
         article {
@@ -93,9 +121,12 @@ section {
 footer {
     background-color: #404a4d;
     width: 100%;
-    height: 5%;
+    /* height: 5%; */
+    height: 38px;
     text-align: center;
     display: table;
+    position: absolute;
+    bottom: 0;
 }
 
         span#footerTitle {
@@ -104,5 +135,27 @@ footer {
             vertical-align: middle;
             font-size: 16px;
             font-weight: 400;
-            /* text-transform: uppercase; */
         }
+
+
+/* width */
+/* ::-webkit-scrollbar {
+    width: 20px;
+} */
+
+/* Track */
+/* ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px black; 
+    border-radius: 10px; 
+} */
+ 
+/* Handle */
+/* ::-webkit-scrollbar-thumb {
+    background: grey; 
+    border-radius: 10px;
+} */
+
+/* Handle on hover */
+/* ::-webkit-scrollbar-thumb:hover {
+    background: #404a4d; 
+} */

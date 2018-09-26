@@ -1,40 +1,111 @@
 <!doctype html>
 <html>
+
     <head>
         <meta charset="utf-8">
-        <title>Finance for you</title>
+        <title>Finance application</title>
         <link rel="stylesheet" type="text/css" href="style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
 
-
     <body>
         <header>
-            <span id="headerTitle"><button onclick="list" id="list"><i class="fa fa-th-list" style="font-size:20px"></i></button> Lucrum Martis</span>
+            <span id="headerTitle">
+                <button id="list" onclick="openNav()">
+                    <i class="fa fa-th-list" style="font-size:20px">
+                    </i>
+                </button> 
+                Lucrum Martis
+            </span>
         </header>
 
-        <nav>
+        <nav id="navka">
             <ul>
-                <a href="#"><li><i class="fa fa fa-home"></i>Ogólne</li></a>
-                <a href="#"><li><i class="fa fa-bank"></i>Kredyt Pekao</li></a>
-                <a href="#"><li><i class="fa fa-bank"></i>Kredyt Deutsche Bank</li></a>
-                <a href="#"><li><i class="fa fa-key"></i>Czynsz</li></a>
-                <a href="#"><li><i class="fa fa-flash"></i>Prąd Tauron</li></a>
-                <a href="#"><li><i class="fa fa-wifi"></i>Internet Finemedia</li></a>
-                <a href="#"><li><i class="fa fa-mobile-phone"></i>Telefon Play</li></a>
-                <a href="#"><li><i class="fa fa-heartbeat"></i>Ubezpieczenie Allianz</li></a>
-                <a href="#"><li><i class="fa fa-car"></i>Samochód</li></a>
-                <a href="#"><li><i class="fa fa-bed"></i>Wynajem</li></a>
-                <a href="#"><li><i class="fa fa-envelope"></i>Powiadomienia</li></a>
-                <a href="#"><li><i class="fa fa-tags"></i>Kalendarz</li></a>
-                <a href="#"><li><i class="fa fa-pencil"></i>Notatki</li></a>
-                <a href="#"><li><i class="fa fa-handshake-o"></i>Zadłużenia</li></a>
-                <a href="#"><li><i class="fa fa-info-circle"></i>Inne</li></a>
-                <a href="#"><li><i class="fa fa-power-off"></i>Wyloguj</li></a>
+
+                <a href="#"><li class="general">
+                    <span><i class="fa fa fa-home"></i></span>
+                    <span class="text">Ogólne</span>
+                </li></a>
+    
+                <a href="#"><li class="general">
+                    <span><i class="fa fa-bank"></i></span>
+                    <span class="text">Kredyt Pekao</span>
+                </li></a>
+
+                <a href="#"><li class="general">
+                    <span><i class="fa fa-bank"></i></span>
+                    <span class="text">Kredyt Deutsche Bank</span>
+                </li></a>
+
+                <a href="#"><li class="general">
+                    <span><i class="fa fa-key"></i></span>
+                    <span class="text">Czynsz</span>
+                </li></a>
+
+                <a href="#"><li class="general">
+                    <span><i class="fa fa-flash"></i></span>
+                    <span class="text">Prąd Tauron</span>
+                </li></a>
+
+                <a href="#"><li class="general">
+                    <span><i class="fa fa-wifi"></i></span>
+                    <span class="text">Internet FineMedia</span>
+                </li></a>
+
+                <a href="#"><li class="general">
+                    <span><i class="fa fa-mobile-phone"></i></span>
+                    <span class="text">Telefon Play</span>
+                </li></a>
+    
+                <a href="#"><li class="general">
+                    <span><i class="fa fa-heartbeat"></i></span>
+                    <span class="text">Ubezpieczenie Allianz</span>
+                </li></a>
+
+                <a href="#"><li class="general">
+                    <span><i class="fa fa-car"></i></span>
+                    <span class="text">Samochód</span>
+                </li></a>
+
+                <a href="#"><li class="general">
+                    <span><i class="fa fa-bed"></i></span>
+                    <span class="text">Wynajem</span>
+                </li></a>
+
+                <a href="#"><li class="general">
+                    <span><i class="fa fa-envelope"></i></span>
+                    <span class="text">Powiadomienia</span>
+                </li></a>
+
+                <a href="#"><li class="general">
+                    <span><i class="fa fa-flash"></i></span>
+                    <span class="text">Kalendarz</span>
+                </li></a>
+
+                <a href="#"><li class="general">
+                    <span><i class="fa fa-pencil"></i></span>
+                    <span class="text">Notatki</span>
+                </li></a>
+
+                <a href="#"><li class="general">
+                    <span><i class="fa fa-handshake-o"></i></span>
+                    <span class="text">Zadłużenia</span>
+                </li></a>
+
+                <a href="#"><li class="general">
+                    <span><i class="fa fa-circle"></i></span>
+                    <span class="text">Inne</span>
+                </li></a>
+
+                <a href="#"><li class="general">
+                    <span><i class="fa fa-power-off"></i></span>
+                    <span class="text">Wyloguj</span>
+                </li></a>
+
             </ul>
         </nav>
 
-        <section>
+        <section id="main">
             test
             <article>
                 test
@@ -49,8 +120,46 @@
         <footer>
             <span id="footerTitle">&copy; 2018 Martyna Zyskowska. All rights reserved.</span>
         </footer>
-    </body>
-</html>
+
+
+        <script>
+            function openNav() {
+                document.getElementById("navka").style.width = "70px";
+                document.getElementsByClassName("general").style.width = "70px";
+                document.getElementById("main").style.left = "70px";
+
+                var y = document.getElementsByClassName("text");
+                var i;
+
+                for (i = 0; i < y.length; i++) {
+                    y[i].innerHTML = "";
+                }
+            }
+
+
+
+
+
+
+            // function openNav() {
+
+            //     if (document.getElementById("navka").style.width === "250px") {
+
+            //         document.getElementById("navka").style.width = "70px";
+            //         document.getElementById("main").style.left = "70px";
+            //         document.body.style.backgroundColor = "white";
+
+            //         var y = document.getElementsByClassName("text");
+            //         var i;
+
+            //         for (i = 0; i < y.length; i++) {
+            //             y[i].innerHTML = "";
+            //     }
+
+            //     } else {
+            //         document.getElementById("navka").style.width = "250px";
+            //     }
+            // }
 
 
 
@@ -63,14 +172,7 @@
 
 
 
-
-
-
-
-
-
-
-
+        </script>
 
     </body>
 </html>
