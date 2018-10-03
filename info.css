@@ -1,0 +1,80 @@
+body {
+    background-color: white;
+    font-family: 'Calibri', sans-serif;
+}
+
+header {
+    background-color: #98a5aa;
+    /* border: rgb(40, 192, 243) 2px solid; */
+    padding: 10px 15px 10px 15px;
+    font-weight: 600;
+    font-size: 28px;
+    margin-bottom: 10px;
+    text-align: center;
+    border-radius: 10px;
+    color: white;
+}
+
+#buttons {
+    float: right;
+    padding: 0px 1px 10px 0px;
+}
+
+button {
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    border: 2px solid #98a5aa;
+    background-color: #d3dde0;
+    width: 30px;
+    height: 30px;
+}
+
+button:hover{
+    background-color: #98a5aa;   
+    color: white;
+}
+
+button:active{
+    background-color: rgb(40, 192, 243);   
+}
+
+button:focus{
+    outline: none;   
+}
+
+table {
+    background-color: #d3dde0;
+    border: white 1px solid;
+    border-collapse: collapse;
+    width: 100%;
+    border-radius: 10px;
+}
+
+table th {
+    border: white 1px solid;
+    padding: 5px;
+    text-align: center;
+    /* background-color: rgb(40, 192, 243); */
+    background-color: #98a5aa;
+    color: white;
+}
+
+table th:first-child {
+    border-top-left-radius: 10px;
+}
+
+table th:last-child {
+    border-top-right-radius: 10px;
+}
+
+table td {
+    border: white 1px solid;
+    padding: 5px;
+    text-align: center;
+}
+
+table tr:hover {
+    background-color: #98a5aa;
+    color: white;
+}

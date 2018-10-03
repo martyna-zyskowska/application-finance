@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <!-- <title>Finance application</title> -->
+        <link rel="stylesheet" type="text/css" href="flat.css">
+    </head>
+
+    <body>
+        <header>
+            Wynajem
+        </header>
+
+        <section>
+
+            <div id="buttons">
+                <button class="press" onclick="addRow()">+</button>
+                <button class="press" onclick="deleteRow()">-</button>
+            </div>
+
+            <table id="table">
+                <tr>
+                    <th>NR Faktury</th>
+                    <th>Data wystawienia</th>
+                    <th>Termin płatności</th>
+                    <th>Zrealizowane dnia</th>
+                    <th>Cena</th>
+                    <th>Status</th>
+                    <th>Notatki</th>
+                </tr>
+
+            </table>
+
+        </section>
+
+
+        <script>
+
+            function addRow() {
+                var table = document.getElementById("table");
+                var row = table.insertRow(1);
+                var cell1 = row.insertCell(0);
+                var cell2 = row.insertCell(1);
+                var cell3 = row.insertCell(1);
+                var cell4 = row.insertCell(1);
+                var cell5 = row.insertCell(1);
+                var cell6 = row.insertCell(1);
+                var cell7 = row.insertCell(1);
+                
+                cell1.innerHTML = "N/A";
+                cell2.innerHTML = "N/A";
+                cell3.innerHTML = "N/A";
+                cell4.innerHTML = "N/A";
+                cell5.innerHTML = "N/A";
+                cell6.innerHTML = "N/A";
+                cell7.innerHTML = "N/A";
+            }
+
+            function deleteRow() {
+                document.getElementById("table").deleteRow(1);
+            }
+
+        </script>
+
+    </body>
+</html>
