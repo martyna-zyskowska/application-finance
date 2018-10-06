@@ -21,83 +21,87 @@
 
         <nav id="leftMenu">
             <ul>
+                <a href="index.html">
+                    <li class="menuItem" onclick="homePage()">
+                        <span><i class="fa fa fa-home"></i></span>
+                        <span class="text">Strona główna</span>
+                    </li>
+                </a>
 
-                <li class="menuItem" onclick="homePage()">
-                    <span><i class="fa fa fa-home"></i></span>
-                    <span class="text">Strona główna</span>
-                </li>
-    
-                <li class="menuItem" onclick="creditOne()">
+
+
+
+                <li class="menuItem" onclick="loadMenu('creditOne')">
                     <span><i class="fa fa-bank"></i></span>
                     <span class="text">Kredyt Pekao</span>
                 </li>
 
-                <li class="menuItem" onclick="creditTwo()">
+                <li class="menuItem" onclick="loadMenu('creditTwo')">
                     <span><i class="fa fa-bank"></i></span>
                     <span class="text">Kredyt Deutsche Bank</span>
                 </li>
 
-                <li class="menuItem" onclick="rent()">
+                <li class="menuItem" onclick="loadMenu('rent')">
                     <span><i class="fa fa-key"></i></span>
                     <span class="text">Czynsz</span>
                 </li>
 
-                <li class="menuItem" onclick="power()">
+                <li class="menuItem" onclick="loadMenu('power')">
                     <span><i class="fa fa-flash"></i></span>
                     <span class="text">Prąd Tauron</span>
                 </li>
 
-                <li class="menuItem" onclick="internet()">
+                <li class="menuItem" onclick="loadMenu('internet')">
                     <span><i class="fa fa-wifi"></i></span>
                     <span class="text">Internet FineMedia</span>
                 </li>
 
-                <li class="menuItem" onclick="mobile()">
+                <li class="menuItem" onclick="loadMenu('mobile')">
                     <span><i class="fa fa-mobile-phone"></i></span>
                     <span class="text">Telefon Play</span>
                 </li>
     
-                <li class="menuItem" onclick="insurance()">
+                <li class="menuItem" onclick="loadMenu('insurance')">
                     <span><i class="fa fa-heartbeat"></i></span>
                     <span class="text">Ubezpieczenie Allianz</span>
                 </li>
 
-                <li class="menuItem" onclick="car()">
+                <li class="menuItem" onclick="loadMenu('car')">
                     <span><i class="fa fa-car"></i></span>
                     <span class="text">Samochód</span>
                 </li>
 
-                <li class="menuItem" onclick="flat()">
+                <li class="menuItem" onclick="loadMenu('flat')">
                     <span><i class="fa fa-bed"></i></span>
                     <span class="text">Wynajem</span>
                 </li>
 
-                <li class="menuItem" onclick="info()">
+                <li class="menuItem" onclick="loadMenu('info')">
                     <span><i class="fa fa-envelope"></i></span>
                     <span class="text">Powiadomienia</span>
                 </li>
 
-                <li class="menuItem" onclick="calendar()">
+                <li class="menuItem" onclick="loadMenu('calendar')">
                     <span><i class="fa fa-flash"></i></span>
                     <span class="text">Kalendarz</span>
                 </li>
 
-                <li class="menuItem" onclick="notes()">
+                <li class="menuItem" onclick="loadMenu('notes')">
                     <span><i class="fa fa-pencil"></i></span>
                     <span class="text">Notatki</span>
                 </li>
 
-                <li class="menuItem" onclick="loans()">
+                <li class="menuItem" onclick="loadMenu('loans')">
                     <span><i class="fa fa-handshake-o"></i></span>
                     <span class="text">Zadłużenia</span>
                 </li>
 
-                <li class="menuItem" onclick="other()">
+                <li class="menuItem" onclick="loadMenu('other')">
                     <span><i class="fa fa-circle"></i></span>
                     <span class="text">Inne</span>
                 </li>
 
-                <li class="menuItem" onclick="logOut()">
+                <li class="menuItem" onclick="loadMenu('logOut')">
                     <span><i class="fa fa-power-off"></i></span>
                     <span class="text">Wyloguj</span>
                 </li>
@@ -106,9 +110,10 @@
         </nav>
 
         <section class="all" id="main">
-            Test
+            <div id="podtytul">
+                Strona główna
+            </div>
         </section>
-
 
         <div style="clear:both"></div>
 
@@ -147,68 +152,8 @@
             //         x.style.display = document.getElementById("homePage");
             // }
 
-            function homePage() {
-                document.getElementById("main").innerHTML='<object type="text/html" data="homepage.html" width="100%" height="98.5%"></object>';
-            }
-
-            function creditOne() {
-                document.getElementById("main").innerHTML='<object type="text/html" data="creditone.html" width="100%" height="98.5%"></object>';
-            }
-
-            function creditTwo() {
-                document.getElementById("main").innerHTML='<object type="text/html" data="credittwo.html" width="100%" height="98.5%"></object>';
-            }
-
-            function rent() {
-                document.getElementById("main").innerHTML='<object type="text/html" data="rent.html" width="100%" height="98.5%"></object>';
-            }
-
-            function power() {
-                document.getElementById("main").innerHTML='<object type="text/html" data="power.html" width="100%" height="98.5%"></object>';
-            }            
-
-            function internet() {
-                document.getElementById("main").innerHTML='<object type="text/html" data="internet.html" width="100%" height="98.5%"></object>';
-            }
-
-            function mobile() {
-                document.getElementById("main").innerHTML='<object type="text/html" data="mobile.html" width="100%" height="98.5%"></object>';
-            }
-
-            function insurance() {
-                document.getElementById("main").innerHTML='<object type="text/html" data="insurance.html" width="100%" height="98.5%"></object>';
-            }
-
-            function car() {
-                document.getElementById("main").innerHTML='<object type="text/html" data="car.html" width="100%" height="98.5%"></object>';
-            }
-
-            function flat() {
-                document.getElementById("main").innerHTML='<object type="text/html" data="flat.html" width="100%" height="98.5%"></object>';
-            }
-
-            function info() {
-                document.getElementById("main").innerHTML='<object type="text/html" data="info.html" width="100%" height="98.5%"></object>';
-            }
-
-            function calendar() {
-                document.getElementById("main").innerHTML='<object type="text/html" data="calendar.html" width="100%" height="98.5%"></object>';
-            }
-
-            function notes() {
-                document.getElementById("main").innerHTML='<object type="text/html" data="notes.html" width="100%" height="98.5%"></object>';
-            }
-
-            function loans() {
-                document.getElementById("main").innerHTML='<object type="text/html" data="loans.html" width="100%" height="98.5%"></object>';
-            }
-
-            function other() {
-                document.getElementById("main").innerHTML='<object type="text/html" data="other.html" width="100%" height="98.5%"></object>';
-            }
-
-            function logOut() {
-                document.getElementById("main").innerHTML='<object type="text/html" data="logout.html" width="100%" height="98.5%"></object>';
+            function loadMenu(menuItemName) {
+                document.getElementById("main").innerHTML='<object type="text/html" data="'+ menuItemName +'.html" width="100%" height="98.5%"></object>';
             }
 
         </script>
