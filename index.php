@@ -2,27 +2,29 @@
     $servername = "localhost";
     $username = "root";
     $password = "";
-    var_dump("blah");
-
+    $dbname = "payment";
 
     // Create connection
-    $conn = mysqli_connect($servername, $username, $password);
+    $conn = new mysqli($servername, $username, $password, $dbname);
 
     // Check connection
-    if (!$conn) {
-        die("Connection failed: " . mysqli_connect_error());
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
     }
-    echo "Connected successfully";
+
+    $sql = "SELECT id, payDate FROM creditOne";
+    $result = $conn->query($sql);
+    $conn->close();
 ?>
 
 <!doctype html>
 <html>
-
     <head>
         <meta charset="utf-8">
         <title>Finance application</title>
         <link rel="stylesheet" type="text/css" href="style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!-- <link rel="stylesheet" type="text/css" href="homepage.css"> -->
     </head>
 
     <body>
@@ -38,94 +40,76 @@
 
         <nav id="leftMenu">
             <ul>
-
                 <li class="menuItem" onclick="homePage()">
                     <span><i class="fa fa fa-home"></i></span>
                     <span class="text">Strona główna</span>
                 </li>
-    
                 <li class="menuItem" onclick="creditOne()">
                     <span><i class="fa fa-bank"></i></span>
                     <span class="text">Kredyt Pekao</span>
                 </li>
-
                 <li class="menuItem" onclick="creditTwo()">
                     <span><i class="fa fa-bank"></i></span>
                     <span class="text">Kredyt Deutsche Bank</span>
                 </li>
-
                 <li class="menuItem" onclick="rent()">
                     <span><i class="fa fa-key"></i></span>
                     <span class="text">Czynsz</span>
                 </li>
-
                 <li class="menuItem" onclick="power()">
                     <span><i class="fa fa-flash"></i></span>
                     <span class="text">Prąd Tauron</span>
                 </li>
-
                 <li class="menuItem" onclick="internet()">
                     <span><i class="fa fa-wifi"></i></span>
                     <span class="text">Internet FineMedia</span>
                 </li>
-
                 <li class="menuItem" onclick="mobile()">
                     <span><i class="fa fa-mobile-phone"></i></span>
                     <span class="text">Telefon Play</span>
                 </li>
-    
                 <li class="menuItem" onclick="insurance()">
                     <span><i class="fa fa-heartbeat"></i></span>
                     <span class="text">Ubezpieczenie Allianz</span>
                 </li>
-
                 <li class="menuItem" onclick="car()">
                     <span><i class="fa fa-car"></i></span>
                     <span class="text">Samochód</span>
                 </li>
-
                 <li class="menuItem" onclick="flat()">
                     <span><i class="fa fa-bed"></i></span>
                     <span class="text">Wynajem</span>
                 </li>
-
                 <li class="menuItem" onclick="info()">
                     <span><i class="fa fa-envelope"></i></span>
                     <span class="text">Powiadomienia</span>
                 </li>
-
                 <li class="menuItem" onclick="calendar()">
                     <span><i class="fa fa-flash"></i></span>
                     <span class="text">Kalendarz</span>
                 </li>
-
                 <li class="menuItem" onclick="notes()">
                     <span><i class="fa fa-pencil"></i></span>
                     <span class="text">Notatki</span>
                 </li>
-
                 <li class="menuItem" onclick="loans()">
                     <span><i class="fa fa-handshake-o"></i></span>
                     <span class="text">Zadłużenia</span>
                 </li>
-
                 <li class="menuItem" onclick="other()">
                     <span><i class="fa fa-circle"></i></span>
                     <span class="text">Inne</span>
                 </li>
-
                 <li class="menuItem" onclick="logOut()">
                     <span><i class="fa fa-power-off"></i></span>
                     <span class="text">Wyloguj</span>
                 </li>
-
             </ul>
         </nav>
 
         <section class="all" id="main">
-            Test
+            <div id="podtytul">Strona główna<div>
         </section>
-
 
         <div style="clear:both"></div>
 
@@ -133,12 +117,9 @@
             <span id="footerTitle">&copy; 2018 Martyna Zyskowska. All rights reserved.</span>
         </footer>
 
-
         <script>
-
             //Open or Close left side menu
             function openNav() {
-
                 var y = document.getElementById("leftMenu");
                 var x = document.getElementById("main");
 
@@ -152,24 +133,12 @@
                 }
             }
 
-            // function homePage() {
-            //     var x = document.getElementById("homePage");
-            //     var y = document.getElementsByClassName("all");
-            //     var i;
-
-            //         for (i = 0; i < y.length; i++) {
-            //             y[i].style.display = "none";
-            //         }
-                
-            //         x.style.display = document.getElementById("homePage");
-            // }
-
             function homePage() {
                 document.getElementById("main").innerHTML='<object type="text/html" data="homepage.html" width="100%" height="98.5%"></object>';
             }
 
             function creditOne() {
-                document.getElementById("main").innerHTML='<object type="text/html" data="creditone.html" width="100%" height="98.5%"></object>';
+                document.getElementById("main").innerHTML='<object type="text/html" data="creditOne.php" width="100%" height="98.5%"></object>';
             }
 
             function creditTwo() {
@@ -228,7 +197,17 @@
                 document.getElementById("main").innerHTML='<object type="text/html" data="logout.html" width="100%" height="98.5%"></object>';
             }
 
-        </script>
+            // function homePage() {
+            //     var x = document.getElementById("homePage");
+            //     var y = document.getElementsByClassName("all");
+            //     var i;
 
+            //         for (i = 0; i < y.length; i++) {
+            //             y[i].style.display = "none";
+            //         }
+                
+            //         x.style.display = document.getElementById("homePage");
+            // }
+        </script>
     </body>
 </html>

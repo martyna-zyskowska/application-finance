@@ -1,15 +1,33 @@
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "payment";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} 
+
+$sql = "SELECT id, creationDate, payDate, doneDate, price, status, notes FROM creditOne";
+$result = $conn->query($sql);
+$conn->close();
+?>
+
 <!doctype html>
 <html>
 
     <head>
         <meta charset="utf-8">
         <!-- <title>Finance application</title> -->
-        <link rel="stylesheet" type="text/css" href="car.css">
+        <link rel="stylesheet" type="text/css" href="creditone.css">
     </head>
 
     <body>
         <header>
-            Samochód
+            Kredyt I
         </header>
 
         <section>
@@ -19,6 +37,7 @@
                 <button class="press" onclick="deleteRow()">-</button>
             </div>
 
+            <?php if ($result->num_rows > 0) {?>
             <table id="table">
                 <tr>
                     <th>NR Faktury</th>
@@ -29,8 +48,21 @@
                     <th>Status</th>
                     <th>Notatki</th>
                 </tr>
-
-            </table>
+            <?php 
+                while($row = $result->fetch_assoc()) {
+                    echo "<tr>
+                        <td>".$row["id"]."</td>
+                        <td>".$row["creationDate"]."</td>
+                        <td>".$row["payDate"]."</td>
+                        <td>".$row["doneDate"]."</td>
+                        <td>".$row["price"]."</td>
+                        <td>".$row["status"]."</td>
+                        <td>".$row["notes"]."</td>
+                    </tr>";
+                }
+                    echo "</table>";
+                } 
+            ?>
 
         </section>
 
@@ -63,8 +95,5 @@
 
         </script>
 
-
-
     </body>
 </html>
-
