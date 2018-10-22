@@ -17,7 +17,7 @@ The aim of the financial application is to
 - use the application on a daily, monthly or yearly basis
 The end result is to have all of your financial obligations in one place.
 ## Screenshots
-![finance_img](./finance_img.png)
+![finance_img_one](./finance_img.png)
 ## Technologies
 Project is created with:
 - HTML5
